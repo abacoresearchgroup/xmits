@@ -4,7 +4,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import nltk
 
 
-def extract_key_words(sentence):
+def extract_key_words(sentence, diagram_words):
 
     sent_tokenize = nltk.data.load('tokenizers/punkt/portuguese.pickle')
 
@@ -30,20 +30,29 @@ def extract_key_words(sentence):
 
             word = word.lower()
 
+            tmp_class = None
+
             if word in punctuation:
                 print('Ignoring {}'.format(word))
 
             elif word in article:
-                update_dict(result, 'article', word)
+                tmp_class = 'article'
 
             elif word in verb:
-                update_dict(result, 'verb', word)
+                tmp_class = 'verb'
 
             elif word in adjective:
-                update_dict(result, 'adjective', word)
+                tmp_class = 'adjective'
 
             else:
-                update_dict(result, 'noun', word)
+                tmp_class = 'noun'
+
+            if tmp_class is not None:
+
+                update_dict(result, tmp_class, word)
+
+                if word in diagram_words:
+                    update_dict_intersect(result_intersection, tmp_class, word)
 
 
     return result
