@@ -1,0 +1,19 @@
+digraph LS {
+	logicalSentence -> conditionalSentence;
+	logicalSentence -> logicalOperator[label="(logicalOperator coditionalSentence)*"];
+	conditionalSentence -> comparisonSentence;
+	conditionalSentence -> "(<IF> comparisonSentence <:> comparisonSentence)*";
+	comparisonSentence -> instanceOfSentence;
+	comparisonSentence -> comparisonOperator[label="(comparisonOperator instanceOfSentence)*"];
+	instanceOfSentence -> additionSentence;
+	instanceOfSentence -> "[<INSTANCEOF> type]";
+	additionSentence -> multiplicationSentence;
+	additionSentence -> "( (<+> | <->) multiplicationSentence)*";
+	multiplicationSentence -> factor;
+	multiplicationSentence -> "( <*> | <^> | </> | <%> factor )*";
+	factor -> "[<NOT>]";
+	factor -> literal[label="( literal | <IDENTIFIER> | <(> conditionalSentence <)>)"];
+	logicalOperator -> "( <AND> | <OR> | <XOR> )";
+	comparisonOperator -> "( < < > | < <= > | < > > | < >= > | < == > | < != | <> >)";
+	literal -> "( < INTEGER > |  < DECIMAL > |  < HEX > |  < OCT > |  < BIN > |  < STRING > |  < TRUE > |  < FALSE > )";
+}

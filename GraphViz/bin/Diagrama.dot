@@ -1,0 +1,16 @@
+digraph Diagrama {
+	ListNode0 [label="ListNode"];
+	ListNode0 -> RelationalOperationsNode;
+	RelationalOperationsNode -> QueryNode;
+	QueryNode -> ReadyOnlyOperationsNode0;
+	ReadyOnlyOperationsNode0 -> UnitaryOperationsNode0;
+	UnitaryOperationsNode0 -> ListNode1;
+	ListNode1 -> ProjectNode;
+	ProjectNode -> ProjectListNode0;
+	ProjectListNode0 -> ProjectListNode1;
+	ProjectListNode0 -> IDENTIFIER0;
+	ProjectListNode1 -> IDENTIFIER1;
+	UnitaryOperationsNode0 -> ReadyOnlyOperationsNode1;
+	ReadyOnlyOperationsNode1 -> UnitaryOperationsNode1;
+	UnitaryOperationsNode1 -> RelationNode;
+}
