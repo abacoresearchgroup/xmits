@@ -6,14 +6,20 @@ class TestFeatureExtractor(unittest.TestCase):
 
     def test_feature_extractor(self):
 
-        result = feature.extract_key_words('O cesto contém legal.',"O deste deve era conter.")
+        results = feature.extract_key_words("Aguardar Inicio de Telecomando 1: PREPARAR DADOSdescarga 1: PREPARAR DADOStipo NomM BeginPg0 Analisar Sintaxe de Telecomando 2: COMANDO RECEBIDO 2: COMANDO RECEBIDO VER OP MODE/INFO OP MODE & NomM WaitDmpSqEr Analisar Sintaxe de Telecomando 3: interromperAquisicaoDeDados 3: interromperAquisicaoDeDados TX DATA-Dmp/NO DATA & NomM WaitPrepDmp1 Analisar Sintaxe de Telecomando 4:obterDadosdaMemoriaRequisitada 4:prepararDados P DMP-DataP0-7FFFH-BFFFH/timeout & NomM PrepDmpR1 Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Dmp/NO DATA & NomM TxDmpR1 Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados P DMP-DataP0-8000H-BFFFH/CMD REC & NomM PrepDmpR2 Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados P HK/CMD REC & NomM PrepHkR1 Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Dmp 14-1/DMP DATA-RSC14-1 1111 & NomM TxDmpR2 Identificar Excecao - - - Determinar Acao Semantica do Telecomando - - - - 6:TRANSMITIR DADOSdescarga 5:TRANSMITIR DADOStipo - - 8:TRANSMITIR DADOScientifico timeout - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Dmp 0/DMP DATA-RSC0 830 & NomM TxDmpR3 Gerar Relato de Eventos - - - Preparar e Enviar Resposta - - - Verificar Consistencia do Telecomando com o Modo de Operacao - - - - 7: DADOSdescarga 6: DADOStipo - - 9: iniciarAquisicaoDeDados 7:RETRANSMITIR RESPOSTAtipo - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Sci/NO DATA & NomM WaitPrepDmp2 Determinar Tratador da Excecao - - - Verificar Consistencia do Telecomando com o Modo de Operacao - - - Determinar Manipulador de Telecomando - - - Identificar Excecao - - - - 8:TRANSMITIR DADOScientifico timeout - - 9: iniciarAquisicaoDeDados 8:DADOStipo - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados P DMP-DataP0-8000H-BFFFH/CMD REC & NomM PrepDmpR3 Tratar Excecao - - - Determinar Manipulador de Telecomando - - - Identificar Excecao - - - Executar Telecomando - - - Gerar Relato de Eventos - - - - 9: iniciarAquisicaoDeDados 7:RETRANSMITIR RESPOSTAtipo - - 10: [buffCientificoSuficiente]DADOS cientifico - - - 11: [buffCientificoInsuficiente]NENHUM DADO - - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Dmp 14-1/DMP DATA-RSC14-1 1111 & NomM TxDmpR4 Executar Telecomando - - - Gerar Relato de Eventos - - - Montar Resposta - - - Determinar Tratador da Excecao - - - - 9: iniciarAquisicaoDeDados 8:DADOStipo - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Dmp 0/timeout & NomM TxDmpR5 Montar Resposta - - - Determinar Tratador da Excecao - - - Recuperar Resposta - - - Tratar Excecao - - - - 10: [buffCientificoSuficiente]DADOS cientifico - - - 11: [buffCientificoInsuficiente]NENHUM DADO - - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados RET ANSW/DMP DATA-RSC0 830 & NomM TxDmpR6 Recuperar Resposta - - - Tratar Excecao - - - Enviar Resposta - - - Analisar Sintaxe de Telecomando 5:prepararDadosdescarga 4:prepararDados TX DATA-Sci/NO DATA & NomM EndPg0 Enviar Resposta - - - Identificar Excecao - - - Determinar Acao Semantica do Telecomando - - - - 6:TRANSMITIR DADOSdescarga 5:TRANSMITIR DADOStipo - - 8:TRANSMITIR DADOScientifico timeout - Gerar Relato de Eventos - - - Preparar e Enviar Resposta - - - Verificar Consistencia do Telecomando com o Modo de Operacao - - - - 7: DADOSdescarga 6: DADOStipo - - 9: iniciarAquisicaoDeDados 7:RETRANSMITIR RESPOSTAtipo - Determinar Tratador da Excecao - - - Verificar Consistencia do Telecomando com o Modo de Operacao - - - Determinar Manipulador de Telecomando - - - Identificar Excecao - - - - 8:TRANSMITIR DADOScientifico timeout - - 9: iniciarAquisicaoDeDados 8:DADOStipo - Tratar Excecao - - - Determinar Manipulador de Telecomando - - - Identificar Excecao - - - Executar Telecomando - - - Gerar Relato de Eventos - - - - 9: iniciarAquisicaoDeDados 7:RETRANSMITIR RESPOSTAtipo - - 10: [buffCientificoSuficiente]DADOS cientifico - - - 11: [buffCientificoInsuficiente]NENHUM DADO - - Executar Telecomando - - - Gerar Relato de Eventos - - - Montar Resposta - - - Determinar Tratador da Excecao - - - - 9: iniciarAquisicaoDeDados 8:DADOStipo - Montar Resposta - - - Determinar Tratador da Excecao - - - Recuperar Resposta - - - Tratar Excecao - - - - 10: [buffCientificoSuficiente]DADOS cientifico - - - 11: [buffCientificoInsuficiente]NENHUM DADO - - Recuperar Resposta - - - Tratar Excecao - - - Enviar Resposta - - - Enviar Resposta - - - ","O processo SCA deverá repassar pacotes de TM originados no SCA, tão logo eles cheguem em SCA_TC_HK, para serem encaminhados pelo processo CTL")
+        print(results[0])
+        print(results[1])
+        print(results[2])
+        conteudo=""
+        for i in range(0, 3):
+            conteudo += str(len(results[i]['adverb']))+";"
+            conteudo += str(len(results[i]['adjective']))+";"
+            conteudo += str(len(results[i]['article']))+";"
+            conteudo += str(len(results[i]['noun']))+";"
+            conteudo += str(len(results[i]['verb']))+";"
+            conteudo += str(len(results[i]['preposition']))+";"
+            conteudo += str(len(results[i]['pronoun']))+";"
 
-        print(result)
-
-        self.assertEquals(result['noun']['cesto'], 1)
-
-        self.assertEquals(result['article']['o'],  1)
-
-        self.assertEquals(result['verb']['contém'], 1)
-
-        self.assertEqual(result['adjective']['legal'], 1)
+        with open('../files/table.csv', 'a') as arq:
+            arq.write(conteudo)
+            arq.write('\n')

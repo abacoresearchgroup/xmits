@@ -183,13 +183,15 @@ public class Controller implements Initializable {
             palavras = palavras.replaceAll(Pattern.quote("("), "");
             palavras = palavras.replaceAll(Pattern.quote(")"), "");
             palavras = palavras.replaceAll(Pattern.quote(","), "");            
+            palavras = palavras.replaceAll("_", " ");                    
+            //palavras = palavras.replaceAll("-", " ");            
+    
             palavras = palavras.replaceAll(",", "");            
             
             System.out.println(palavras);
             String[] array = palavras.split(" ");
-            Classify classify = new Classify("Pacote TC recebido e existe erro de sintaxe. Relato de evento deve ser gerado e enviado a CTL.TM_OUT", array);
-            //classify.gravar();
-            classify.teste();
+            Classify classify = new Classify();
+            classify.gravar(palavras);
             if (gerarArquivo) {
                 saveFiles(ts);
             }

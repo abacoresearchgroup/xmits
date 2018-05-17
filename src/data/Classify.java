@@ -45,6 +45,9 @@ public class Classify {
 
         this.verbos = loadVerbs();
     }
+    
+    public Classify(){
+    }
 
     private ArrayList<String> loadVerbs() {
         ArrayList<String> conteudo = new ArrayList<String>();
@@ -196,23 +199,13 @@ public class Classify {
         return count;
     }
 
-    public void gravar() {
+    public void gravar(String teste) {
         try {
-            FileWriter arq = new FileWriter("classify.csv", true);
+            FileWriter arq = new FileWriter("teste.txt", true);
             BufferedWriter escArq = new BufferedWriter(arq);
 
-            escArq.append(this.countArtigos() + ";");
-            escArq.append(this.countPreposicoes() + ";");
-            escArq.append(this.countVerbos() + ";");
-            escArq.append(";");
-
-            escArq.append(this.DiagramCountArtigos() + ";");
-            escArq.append(this.DiagramCountPreposicoes() + ";");
-            escArq.append(this.DiagramCountVerbos() + ";");
-            escArq.append(";");
-
+            escArq.append(teste);
             escArq.newLine();
-
             escArq.close();
             arq.close();
         } catch (IOException e) {
