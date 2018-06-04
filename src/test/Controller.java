@@ -180,20 +180,23 @@ public class Controller implements Initializable {
                 showTS(stringTS);
             }
             String palavras = print.createMensage(ts);
-            palavras = palavras.replaceAll(Pattern.quote("("), "");
+            /*palavras = palavras.replaceAll(Pattern.quote("("), "");
             palavras = palavras.replaceAll(Pattern.quote(")"), "");
-            palavras = palavras.replaceAll(Pattern.quote(","), "");            
-            palavras = palavras.replaceAll("_", " ");                    
-            //palavras = palavras.replaceAll("-", " ");            
-    
-            palavras = palavras.replaceAll(",", "");            
+            palavras = palavras.replaceAll(Pattern.quote(","), "");
+            palavras = palavras.replaceAll("_", " ");
+            //palavras = palavras.replaceAll("-", " ");
+            
+            palavras = palavras.replaceAll(",", "");
             
             System.out.println(palavras);
             String[] array = palavras.split(" ");
             Classify classify = new Classify();
-            classify.gravar(palavras);
+            classify.gravar(palavras);*/
+             if (erro.isEmpty()) {
             if (gerarArquivo) {
                 saveFiles(ts);
+            }
+                
             }
         } else {
             JOptionPane.showMessageDialog(null, "Desculpe. Você precisa inserir ao menos um diagrama para executar");
