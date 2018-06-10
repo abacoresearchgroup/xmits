@@ -192,12 +192,11 @@ public class Controller implements Initializable {
             String[] array = palavras.split(" ");
             Classify classify = new Classify();
             classify.gravar(palavras);*/
-             if (erro.isEmpty()) {
             if (gerarArquivo) {
                 saveFiles(ts);
             }
                 
-            }
+            
         } else {
             JOptionPane.showMessageDialog(null, "Desculpe. Você precisa inserir ao menos um diagrama para executar");
         }

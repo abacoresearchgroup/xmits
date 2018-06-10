@@ -7,8 +7,8 @@ def extract_key_words(sentence, diagram_word):
 
     sent_tokenize = nltk.data.load('tokenizers/punkt/portuguese.pickle')
 
-    sentences = sent_tokenize.tokenize(sentence)
-    diagram_words = sent_tokenize.tokenize(diagram_word)
+    sentences = sent_tokenize.tokenize(sentence.lower())
+    diagram_words = sent_tokenize.tokenize(diagram_word.lower())
 
     test_diagram = diagram_words[0].split(" ");
     test_sentence = sentences[0].split(" ");

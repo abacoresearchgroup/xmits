@@ -14,8 +14,10 @@ import tuts.logics.Core;
 import tuts.tools.TransitionSystemTools;
 import tuts.tools.TutsTools;
 import converter.Converter;
+import data.Classify;
 import global.tools.Printer;
 import java.io.File;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class Tuts {
@@ -77,6 +79,11 @@ public class Tuts {
         tutsTools.tutsReset();
         for (String file : files) {
             converter.run(file);
+            
+            Printer print = new Printer();
+            TransitionSystem ts = converter.getOutput();
+            this.collectWord(ts,new File(file));
+            
             tsDictionary.addTransitionSystem(converter.getOutput());
         }
     }
@@ -90,8 +97,8 @@ public class Tuts {
 
             TransitionSystem ts = converter.getOutput();
 
-            String x = print.getTS(ts);
-            
+            String x = print.getTS(ts); 
+            this.collectWord(ts, new File(file));
             String teste = formatter.reformat(erro);
             String[] array = teste.split(",");
             
@@ -140,4 +147,26 @@ public class Tuts {
         tutsTools.tutsReset();
     }
 
+    
+    //Função responsalvel por coletar as palavras no diagrama
+    private void collectWord(TransitionSystem ts,File file){
+            Printer print = new Printer();
+            String words = print.createMensage(ts);
+
+            words = words.replaceAll(Pattern.quote("("), "");
+            words = words.replaceAll(Pattern.quote(")"), "");
+            words = words.replaceAll(Pattern.quote(","), "");
+            words = words.replaceAll("_", " ");
+            words = words.replaceAll("-", " ");
+            
+            words = words.replaceAll(",", "");       
+            words = words.replaceAll(";", "");   
+            words = words.replaceAll(":", "");
+           
+            System.out.println(words);
+            String[] array = words.split(" ");
+            Classify classify = new Classify();
+            classify.gravar(words,file);
+    }
+    
 }
