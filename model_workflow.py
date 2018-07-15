@@ -4,13 +4,16 @@ import pandas as pd
 import numpy as np
 import model
 
-dataset = pd.read_csv('files/table.csv', sep=';')
+dataset = pd.read_csv('files/usecase_and_diagram.csv', sep=',')
 
 del dataset['diagrama']
+del dataset['scenario']
 
-x = dataset.iloc[:,:-2]
+x = dataset.iloc[:,:-7]
 
-y = dataset.iloc[:,-1]
+y = dataset['resposta'].astype(int)
+
+print(dataset.info())
 
 fold = KFold(n_splits=5)
 
@@ -28,8 +31,8 @@ for func in [model.xgb, model.mlp, model.extratree, model.logreg]:
 
         y_hat, t = func(x_train, y_train, x_test)
 
-        y_hat[y_hat >= .5] = 1
-        y_hat[y_hat < .5] = 0
+        #y_hat[y_hat >= .5] = 1
+        #y_hat[y_hat < .5] = 0
 
         auc_tmp = [roc_auc_score(y_test, y_hat)]
 

@@ -41,17 +41,15 @@ def extratree(x, y, x_test):
 
     result = None
 
-    n_estimators = 1000
-
-    max_features = 5
+    n_estimators = 2000
 
     if np.size(x, 1) > 5:
 
-        tree = ExtraTreesClassifier(n_estimators=n_estimators, max_features=max_features)
+        tree = ExtraTreesClassifier(n_estimators=n_estimators, n_jobs=-1)
 
         tree.fit(x, y)
 
-        return tree.predict(x_test), get_best_threshold(y, tree.predict_proba(x)[:,1])
+        return tree.predict(x_test), get_best_threshold(y, tree.predict_proba(x))
 
     return result, None
 
@@ -73,7 +71,7 @@ def logreg(x, y, x_test):
 
 def mlp(x, y, x_test, hidden_units=128):
 
-    mlp = MLPClassifier(hidden_layer_sizes=(hidden_units, hidden_units, hidden_units), max_iter=1000)
+    mlp = MLPClassifier(hidden_layer_sizes=(hidden_units, hidden_units, hidden_units), max_iter=1000, solver='lbfgs')
 
     scaler = preprocessing.StandardScaler()
 
