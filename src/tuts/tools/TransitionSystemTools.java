@@ -44,5 +44,9 @@ public class TransitionSystemTools {
         }
         return false;
     }
+    
+    public TransitionSystemDictionary getTSDictionary(){
+        return this.tsDictionary;
+    }
 
 }

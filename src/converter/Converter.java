@@ -3,6 +3,7 @@ package converter;
 import converter.collectors.DiagramHandler;
 import converter.logics.Core;
 import converter.tools.ConverterTools;
+import global.exceptions.converter.InvalidXMIException;
 import reader.Reader;
 import global.logics.Builder;
 import global.structure.TransitionSystem;
@@ -46,6 +47,13 @@ public class Converter {
 			e.printStackTrace();
 		}
 	}
+        
+        public void prepareToRun(String xml) throws InvalidXMIException, Exception{
+            converterTools.reset();
+            reader.read(xml);
+            diagramHandler.process(reader.getOutput());
+            
+        }
 	
 	public TransitionSystem getOutput () {
 		return builder.getRoot();

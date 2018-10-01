@@ -1,4 +1,4 @@
-package test;
+package gui_interface.beans;
 
 import global.structure.TransitionSystem;
 import java.io.BufferedWriter;
@@ -7,35 +7,18 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Albino Freitas
+ */
 public class Dot {
-
+    
     public void print(TransitionSystem list) {
         System.out.println(createDot(list));
     }
 
     public String getTS(TransitionSystem list) {
         return createDot(list);
-    }
-
-    public void saveFile(String content, String outputFileName) {
-        try {
-
-            content = content.replaceAll("\n", "\r\n");
-            File file = new File(outputFileName + "_dot.dot");
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
-            try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-                bufferedWriter.write(content);
-            }
-
-            System.out.println(outputFileName + ".dot created successfully");
-
-        } catch (Exception e) {
-            System.out.println("Printer Error: Output file coudn't be created!");
-        }
     }
 
     private String createDot(TransitionSystem list) {
@@ -49,21 +32,25 @@ public class Dot {
         int index = 0;
 
         while (true) {
+            
             if (index != 0) {
                 pai = "    " + index; //list.getState().getMessage().getContent();
             }
+            
             for (TransitionSystem child : list.getNext()) {
                 output.add(child);
                 if (index != 0) {
                     content += pai + " -> " + (output.size() - 1) + ";\n";//child.getState().getMessage().getContent() + "\n";
                 }
             }
+            
             try {
                 list = output.get(index + 1);
                 index = index + 1;
             } catch (Exception e) {
                 break;
             }
+            
         }
 
         content += "\n\n";
@@ -83,5 +70,27 @@ public class Dot {
         return content;
 
     }
+    
+    public void saveFile(String content, String outputFileName) {
+        try {
 
+            content = content.replaceAll("\n", "\r\n");
+            File file = new File(outputFileName + "_dot.dot");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
+            try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+                bufferedWriter.write(content);
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
+            System.out.println(outputFileName + ".dot created successfully");
+
+        } catch (Exception e) {
+            System.out.println("Printer Error: Output file coudn't be created!");
+        }
+    }
 }
