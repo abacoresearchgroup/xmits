@@ -1,3 +1,0 @@
-1 PREPARAR DADOStipo 2 COMANDO RECEBIDO 3 interromperAquisicaoDeDados 4prepararDadoshousekeeping 5TRANSMITIR DADOStipo timeout 6 DADOStipo 7RETRANSMITIR RESPOSTAtipo timeout 8DADOStipo 7RETRANSMITIR RESPOSTAtipo 8DADOStipo 
-1 PREPARAR DADOStipo 2 COMANDO RECEBIDO 3 interromperAquisicaoDeDados 4prepararDadoshousekeeping 5TRANSMITIR DADOStipo timeout 6 DADOStipo 7RETRANSMITIR RESPOSTAtipo timeout 8DADOStipo 7RETRANSMITIR RESPOSTAtipo 8DADOStipo 
-1 PREPARAR DADOStipo 2 COMANDO RECEBIDO 3 interromperAquisicaoDeDados 4prepararDadoshousekeeping 5TRANSMITIR DADOStipo timeout 6 DADOStipo 7RETRANSMITIR RESPOSTAtipo timeout 8DADOStipo 7RETRANSMITIR RESPOSTAtipo 8DADOStipo 

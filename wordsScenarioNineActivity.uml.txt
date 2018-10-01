@@ -1,2 +1,0 @@
-Recebimento de telecomandos de preparacao de dados Avaliar consistencia do telecomando com modo de operacao corrente Definir manipulador do telecomando Notifica Evento Determinar parada de aquisicao de dados Parar aquisicao de dados Preparar dados Preparar dados 
-Recebimento de telecomandos de preparacao de dados Avaliar consistencia do telecomando com modo de operacao corrente Definir manipulador do telecomando Notifica Evento Determinar parada de aquisicao de dados Parar aquisicao de dados Preparar dados Preparar dados 

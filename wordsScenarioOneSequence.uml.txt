@@ -1,1 +1,0 @@
-1 powerOn 2iniciar 3verificarHardware 4 obterStatusAlimentacaoHX1HX2 5gerarRelatoPOST 6reconfigurar 7mudarModoOperacao 8ativarModuloPrincipal 
