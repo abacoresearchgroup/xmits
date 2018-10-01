@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/data/Classify.java</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/test/MainInterface.fxml</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/tuts/Tuts.java</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/test/Main.java</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/global/logics/Builder.java</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/converter/Converter.java</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/test/Controller.java</file>
-            <file>file:/C:/Users/Camila/Desktop/xmits/src/bridge/Formatter.java</file>
+            <file>file:/home/albino-freitas/Documents/projects/xmits/src/gui_interface/beans/ManagerBean.java</file>
+            <file>file:/home/albino-freitas/Documents/projects/xmits/src/gui_interface/beans/Dot.java</file>
+            <file>file:/home/albino-freitas/Documents/projects/xmits/src/gui_interface/Main.java</file>
+            <file>file:/home/albino-freitas/Documents/projects/xmits/src/gui_interface/controllers/Controller.java</file>
+            <file>file:/home/albino-freitas/Documents/projects/xmits/src/gui_interface/api/GraphViz.java</file>
         </group>
     </open-files>
 </project-private>
